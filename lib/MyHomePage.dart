@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'MenuWidget.dart';
 
 class MyHomePage extends StatefulWidget
 {
@@ -10,6 +11,8 @@ class MyHomePage extends StatefulWidget
 
 class _MyHomePageState extends State<MyHomePage>
 {
+  bool _visible = false;
+
   @override
   Widget build(BuildContext context)
   {
@@ -27,21 +30,30 @@ class _MyHomePageState extends State<MyHomePage>
               children: <Widget>[
                 Container(
                   child: Stack(
-                      children: [
-                        Image.asset(
-                            "images/image1.png",
-                          height: height - 90.0,
-                          width: double.infinity,
-                          fit: BoxFit.fill,
+                    children: [
+                      Image.asset(
+                        "images/image1.png",
+                        height: height - 90.0,
+                        width: double.infinity,
+                        fit: BoxFit.fill,
+                      ),
+                      Positioned(
+                        top: 100.0,
+                        left: (width/2) - 100.0,
+                        width: 200.0,
+                        height: 200.0,
+                        child: Image.asset("images/image2.png"),
+                      ),
+                      Positioned(
+                        bottom: 1.0,
+                        left: 15.0,
+                        child: AnimatedOpacity(
+                          opacity: _visible ? 1.0 : 0.0,
+                          duration: Duration(milliseconds: 500),
+                          child: _visible ? MenuWidget() : Container(),
                         ),
-                        Positioned(
-                          top: 100.0,
-                          left: (width/2) - 100.0,
-                          width: 200.0,
-                          height: 200.0,
-                          child: Image.asset("images/image2.png"),
-                        ),
-                      ],
+                      ),
+                    ],
                   ),
                 ),
                 Expanded(
@@ -50,25 +62,29 @@ class _MyHomePageState extends State<MyHomePage>
                     color: Colors.grey,
                     child: Row(
                       children: <Widget>[
-                      RaisedButton(
-                        elevation: 5.0,
-                        onPressed:(){} ,
-                        child: Row(
-                          children: <Widget>[
-                            Image.asset("images/image3.png",),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                              child: Text(
+                        RaisedButton(
+                          elevation: 5.0,
+                          onPressed:(){
+                            setState(() {
+                              _visible = !_visible;
+                            });
+                          } ,
+                          child: Row(
+                            children: <Widget>[
+                              Image.asset("images/image3.png",),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                                child: Text(
                                   "Start",
-                                style: TextStyle(
-                                  fontSize: 20.0,
+                                  style: TextStyle(
+                                    fontSize: 20.0,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-        ],
+                      ],
                     ),
                   ),
                 ),
