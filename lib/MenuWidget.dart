@@ -10,6 +10,7 @@ class MenuWidget extends StatelessWidget
 
     return Container(
       width: width - 30.0,
+      height: height - 20.0,
       //margin: EdgeInsets.all(10.0),
       padding: EdgeInsets.symmetric(vertical: 5.0,),
       //height: 0.0,
@@ -30,7 +31,7 @@ class MenuWidget extends StatelessWidget
           ),
         ),
       ),
-      child: Column(
+      child: ListView(
         children: <Widget>[
           ListTile(
             leading: Image.asset("images/image4.png",
