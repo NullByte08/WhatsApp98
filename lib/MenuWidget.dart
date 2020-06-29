@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp98/Status_screen.dart';
 import 'package:whatsapp98/callLogs.dart';
+import 'package:whatsapp98/contacts.dart';
 import 'package:whatsapp98/setting.dart';
+import 'package:whatsapp98/sign_in/sign_in.dart';
 
 class MenuWidget extends StatelessWidget {
   @override
@@ -57,13 +60,17 @@ class MenuWidget extends StatelessWidget {
               height: 50.0,
             ),
             title: Text(
-              "Open Office Document",
+              "Sign In",
               style: TextStyle(
                 fontSize: 25.0,
                 //fontWeight: FontWeight.bold,
               ),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return SignIn();
+              }));
+            },
           ),
           Divider(
             thickness: 3.0,
@@ -87,7 +94,11 @@ class MenuWidget extends StatelessWidget {
               size: 50.0,
               color: Colors.black,
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return Contacts();
+              }));
+            },
           ),
           ListTile(
             leading: Image.asset(
@@ -107,7 +118,11 @@ class MenuWidget extends StatelessWidget {
               size: 50.0,
               color: Colors.black,
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return Status();
+              }));
+            },
           ),
           ListTile(
             leading: Image.asset(
@@ -127,9 +142,10 @@ class MenuWidget extends StatelessWidget {
               size: 50.0,
               color: Colors.black,
             ),
-
-            onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => CallLogs()));},
-
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => CallLogs()));
+            },
           ),
           ListTile(
             leading: Image.asset(
@@ -149,7 +165,10 @@ class MenuWidget extends StatelessWidget {
               size: 50.0,
               color: Colors.black,
             ),
-            onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Setting()));},
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Setting()));
+            },
           ),
           ListTile(
             leading: Image.asset(
@@ -213,7 +232,11 @@ class MenuWidget extends StatelessWidget {
               size: 50.0,
               color: Colors.black,
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return SignIn();
+              }));
+            },
           ),
         ],
       ),

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -107,6 +109,7 @@ class _ChatsState extends State<Chats> {
         statusBarColor: Colors.transparent,
       ),
       child: Scaffold(
+        resizeToAvoidBottomPadding: false,
         backgroundColor: Colors.grey[400],
         body: Column(
           children: <Widget>[
@@ -267,9 +270,11 @@ class _ChatsState extends State<Chats> {
                                       senderText:
                                           textEditingController.value.text));
                                   if (count == 0) {
+                                    sleep(Duration(milliseconds: 400));
                                     items.add(Message(
                                         senderName: "John", senderText: "Hi"));
                                   } else {
+                                    sleep(Duration(milliseconds: 400));
                                     items.add(Message(
                                         senderName: "John",
                                         senderText: "Good"));
