@@ -1,5 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:whatsapp98/Chat_screen.dart';
@@ -8,18 +6,6 @@ class Dialog1 extends StatelessWidget {
   String username;
 
   Dialog1({this.username});
-
-  Future<void> _signInAnonymously() async {
-    try {
-      await FirebaseAuth.instance.signInAnonymously();
-      await Firestore.instance
-          .collection("Username")
-          .document("username")
-          .setData({'username': username});
-    } catch (e) {
-      print(e); // TODO: show dialog with error
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +98,6 @@ class Dialog1 extends StatelessWidget {
                   child: FlatButton(
                     padding: EdgeInsets.all(0),
                     onPressed: () {
-                      _signInAnonymously();
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
                         return Chats();
