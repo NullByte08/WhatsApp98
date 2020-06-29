@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp98/callLogs.dart';
 
-class MenuWidget extends StatelessWidget
-{
+class MenuWidget extends StatelessWidget {
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
@@ -13,7 +11,9 @@ class MenuWidget extends StatelessWidget
       width: width - 30.0,
       height: height - 20.0,
       //margin: EdgeInsets.all(10.0),
-      padding: EdgeInsets.symmetric(vertical: 5.0,),
+      padding: EdgeInsets.symmetric(
+        vertical: 5.0,
+      ),
       //height: 0.0,
       decoration: BoxDecoration(
         color: Colors.grey,
@@ -35,9 +35,10 @@ class MenuWidget extends StatelessWidget
       child: ListView(
         children: <Widget>[
           ListTile(
-            leading: Image.asset("images/image4.png",
-            width: 50.0,
-            height: 50.0,
+            leading: Image.asset(
+              "images/image4.png",
+              width: 50.0,
+              height: 50.0,
             ),
             title: Text(
               "New Office Document",
@@ -46,10 +47,11 @@ class MenuWidget extends StatelessWidget
                 //fontWeight: FontWeight.bold,
               ),
             ),
-            onTap: (){},
+            onTap: () {},
           ),
           ListTile(
-            leading: Image.asset("images/image4.png",
+            leading: Image.asset(
+              "images/image4.png",
               width: 50.0,
               height: 50.0,
             ),
@@ -60,14 +62,15 @@ class MenuWidget extends StatelessWidget
                 //fontWeight: FontWeight.bold,
               ),
             ),
-            onTap: (){},
+            onTap: () {},
           ),
           Divider(
             thickness: 3.0,
             color: Colors.white38,
           ),
           ListTile(
-            leading: Image.asset("images/image4.png",
+            leading: Image.asset(
+              "images/image4.png",
               width: 50.0,
               height: 50.0,
             ),
@@ -83,10 +86,11 @@ class MenuWidget extends StatelessWidget
               size: 50.0,
               color: Colors.black,
             ),
-            onTap: (){},
+            onTap: () {},
           ),
           ListTile(
-            leading: Image.asset("images/image5.png",
+            leading: Image.asset(
+              "images/image5.png",
               width: 50.0,
               height: 50.0,
             ),
@@ -102,10 +106,11 @@ class MenuWidget extends StatelessWidget
               size: 50.0,
               color: Colors.black,
             ),
-            onTap: (){},
+            onTap: () {},
           ),
           ListTile(
-            leading: Image.asset("images/image6.png",
+            leading: Image.asset(
+              "images/image6.png",
               width: 50.0,
               height: 50.0,
             ),
@@ -121,10 +126,13 @@ class MenuWidget extends StatelessWidget
               size: 50.0,
               color: Colors.black,
             ),
+
             onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => CallLogs()));},
+
           ),
           ListTile(
-            leading: Image.asset("images/image7.png",
+            leading: Image.asset(
+              "images/image7.png",
               width: 50.0,
               height: 50.0,
             ),
@@ -140,10 +148,11 @@ class MenuWidget extends StatelessWidget
               size: 50.0,
               color: Colors.black,
             ),
-            onTap: (){},
+            onTap: () {},
           ),
           ListTile(
-            leading: Image.asset("images/image8.png",
+            leading: Image.asset(
+              "images/image8.png",
               width: 50.0,
               height: 50.0,
             ),
@@ -159,10 +168,11 @@ class MenuWidget extends StatelessWidget
               size: 50.0,
               color: Colors.black,
             ),
-            onTap: (){},
+            onTap: () {},
           ),
           ListTile(
-            leading: Image.asset("images/image9.png",
+            leading: Image.asset(
+              "images/image9.png",
               width: 50.0,
               height: 50.0,
             ),
@@ -178,14 +188,15 @@ class MenuWidget extends StatelessWidget
               size: 50.0,
               color: Colors.black,
             ),
-            onTap: (){},
+            onTap: () {},
           ),
           Divider(
             thickness: 3.0,
             color: Colors.white38,
           ),
           ListTile(
-            leading: Image.asset("images/image10.png",
+            leading: Image.asset(
+              "images/image10.png",
               width: 50.0,
               height: 50.0,
             ),
@@ -201,7 +212,7 @@ class MenuWidget extends StatelessWidget
               size: 50.0,
               color: Colors.black,
             ),
-            onTap: (){},
+            onTap: () {},
           ),
         ],
       ),
