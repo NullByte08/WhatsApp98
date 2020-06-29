@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp98/callLogs.dart';
 
 class MenuWidget extends StatelessWidget
 {
@@ -120,7 +121,7 @@ class MenuWidget extends StatelessWidget
               size: 50.0,
               color: Colors.black,
             ),
-            onTap: (){},
+            onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => CallLogs()));},
           ),
           ListTile(
             leading: Image.asset("images/image7.png",
